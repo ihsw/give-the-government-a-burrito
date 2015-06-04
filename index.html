@@ -13,13 +13,13 @@
                 <p ng-show="loading">Loading</p>
                 <div ng-show="!loading">
                     <div ng-repeat="package in packages track by $index">
-                        <div class="row">
+                        <div class="row" style="margin-bottom: 10px; ">
                             <div class="col-sm-2">
                                 <p class="text-center">
                                     <img ng-src="{{ package.vendor.images[0].thumbnail }}" alt="" class="img-thumbnail img-responsive">
                                 </p>
                             </div>
-                            <div class="col-sm-10">
+                            <div class="col-sm-6">
                                 <h4>{{ package.name }}</h4>
                                 <p class="alert alert-info"><i class="fa fa-info-circle"></i> {{ package.description }}</p>
                                 <div class="btn-group">
@@ -44,6 +44,19 @@
                                         ng-show="package.vendor.youtubeUrl"
                                     ><i class="fa fa-youtube"></i> Youtube</a>
                                 </div>
+                                <div class="btn-group">
+                                    <a href="mailto:{{ package.vendor.mainEmail }}" class="btn btn-default"><i class="fa fa-envelope"></i> Email</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="well well-sm">
+                                    <map center="{{ vendorCenter(package.vendor) }}" zoom="12">
+                                        <marker
+                                            ng-repeat="address in package.vendor.addresses"
+                                            position="{{ addressPosition(address) }}"
+                                        ></marker>
+                                    </map>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -54,6 +67,8 @@
         <script src="lib/angular.min.js"></script>
         <script src="lib-integration.js"></script>
         <script src="node_modules/citypantry-js-lib/dist/lib-es5-with-browser-polyfill.js"></script>
+        <script src="http://maps.google.com/maps/api/js"></script>
+        <script src="lib/ng-map.min.js"></script>
         <script src="your-code.js"></script>
     </body>
 </html>
