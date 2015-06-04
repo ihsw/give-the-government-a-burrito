@@ -1,17 +1,33 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <title>Burritos Near Parliament</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/fontawesome/css/font-awesome.min.css">
     </head>
     <body ng-app="jsCodingTest">
-        <main ng-controller="GiveTheGovernmentABurrito">
-            <h1>Burritos near the Houses of Parliament</h1>
-            <p ng-show="loading">Loading</p>
-            <div ng-show="!loading">
-                <div ng-repeat="package in packages track by $index">
-                    <h2>{{ package.name }}</h2>
-                    <p>{{ package.description }}</p>
+        <div class="container">
+            <main ng-controller="GiveTheGovernmentABurrito">
+                <h1>Burritos near the Houses of Parliament</h1>
+                <p ng-show="loading">Loading</p>
+                <div ng-show="!loading">
+                    <div ng-repeat="package in packages track by $index">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <p class="text-center">
+                                    <img ng-src="{{ package.vendor.images[0].thumbnail }}" alt="" class="img-thumbnail img-responsive">
+                                </p>
+                            </div>
+                            <div class="col-sm-10">
+                                <h4>{{ package.name }}</h4>
+                                <p class="alert alert-info"><i class="fa fa-info-circle"></i> {{ package.description }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
 
         <script src="lib/angular.min.js"></script>
         <script src="lib-integration.js"></script>
