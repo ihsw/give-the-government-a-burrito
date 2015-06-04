@@ -11,5 +11,10 @@ angular.module('jsCodingTest').controller('GiveTheGovernmentABurrito', function(
     PackagesFactory.searchPackages('Burrito', 'SW1A%200AA').success(function(data) {
         $scope.loading = false;
         $scope.packages = data.packages;
+        var p;
+        for (var i in data.packages) {
+            p = data.packages[i];
+            console.log(p.vendor.facebookUrl);
+        }
     });
 });
