@@ -12,7 +12,6 @@ app.controller('GiveTheGovernmentABurrito', function (BurritoFactory, $scope) {
         return '[' + address.latitude + ', ' + address.longitude + ']';
     };
     $scope.loading = true;
-    $scope.greeting = 'Hello, world!';
     $scope.packages = [];
 
     BurritoFactory.getBurritos().success(function (data) {
