@@ -1,13 +1,16 @@
-describe('GiveTheGovernmentABurrito example', function () {
+describe('GiveTheGovernmentABurrito', function () {
     beforeEach(module('jsCodingTest'));
 
-    var GiveTheGovernmentABurritoController, scope;
-    beforeEach(inject(function ($rootScope, $controller) {
-        scope = $rootScope.$new();
-        GiveTheGovernmentABurritoController = $controller('GiveTheGovernmentABurrito', { $scope: scope });
+    var $controller;
+    beforeEach(inject(function (_$controller_) {
+        $controller = _$controller_;
     }));
 
-    it('says hello world', function () {
-        expect(scope.greeting).toEqual("Hello, world!");
+    describe('controller', function () {
+        it('should exist', function () {
+            var scope = {};
+            var controller = $controller('GiveTheGovernmentABurrito', { $scope: scope });
+            expect(controller).toBeDefined();
+        });
     });
 });
