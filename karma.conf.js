@@ -19,6 +19,7 @@ module.exports = function(config) {
       'node_modules/angular-mocks/angular-mocks.js',
       'lib-integration.js',
       'node_modules/citypantry-js-lib/dist/lib-es5-with-browser-polyfill.js',
+      'lib/ng-map.min.js',
       'your-code.js',
       'test/test.js'
     ],
