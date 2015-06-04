@@ -22,6 +22,28 @@
                             <div class="col-sm-10">
                                 <h4>{{ package.name }}</h4>
                                 <p class="alert alert-info"><i class="fa fa-info-circle"></i> {{ package.description }}</p>
+                                <div class="btn-group">
+                                    <a
+                                        href="{{ package.vendor.facebookUrl }}"
+                                        class="btn btn-default"
+                                        ng-show="package.vendor.facebookUrl"
+                                    ><i class="fa fa-facebook"></i> Facebook</a>
+                                    <a
+                                        href="{{ package.vendor.twitterUrl }}"
+                                        class="btn btn-default"
+                                        ng-show="package.vendor.twitterUrl"
+                                    ><i class="fa fa-twitter"></i> Twitter</a>
+                                    <a
+                                        href="{{ package.vendor.googlePlusUrl }}"
+                                        class="btn btn-default"
+                                        ng-show="package.vendor.googlePlusUrl"
+                                    ><i class="fa fa-google-plus"></i> Google Plus</a>
+                                    <a
+                                        href="{{ package.vendor.youtubeUrl }}"
+                                        class="btn btn-default"
+                                        ng-show="package.vendor.youtubeUrl"
+                                    ><i class="fa fa-youtube"></i> Youtube</a>
+                                </div>
                             </div>
                         </div>
                     </div>
