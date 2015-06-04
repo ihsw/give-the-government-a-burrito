@@ -3,7 +3,14 @@
     </head>
     <body ng-app="jsCodingTest">
         <main ng-controller="GiveTheGovernmentABurrito">
-            Write your HTML here.
+            <h1>Burritos near the Houses of Parliament</h1>
+            <p ng-show="loading">Loading</p>
+            <div ng-show="!loading">
+                <div ng-repeat="package in packages track by $index">
+                    <h2>{{ package.name }}</h2>
+                    <p>{{ package.description }}</p>
+                </div>
+            </div>
         </main>
 
         <script src="lib/angular.min.js"></script>
